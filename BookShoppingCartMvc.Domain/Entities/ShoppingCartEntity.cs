@@ -1,9 +1,10 @@
 ﻿namespace BookShoppingCartMvc.Domain.Entities
 {
-    public class ShoppingCart
+    public class ShoppingCartEntity
     {
         public Guid Id { get; set; }
-        public Guid UserId { get; set; }
+        public string? UserId { get; set; }
         public bool IsDeleted { get; set; } = false;
+        public List<CartDetailEntity>? CartDetails { get; set; }
     }
 }
