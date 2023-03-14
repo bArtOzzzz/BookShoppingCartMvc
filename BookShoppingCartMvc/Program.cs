@@ -22,6 +22,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<IGenreRepository, GenreRepository>();
+builder.Services.AddScoped<IGenreService, GenreService>();
 
 builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 

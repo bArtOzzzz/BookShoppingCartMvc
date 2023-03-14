@@ -8,16 +8,28 @@ namespace BookShoppingCartMvc.Controllers
     public class HomeController : Controller
     {
         private readonly IBookService _bookService;
+        private readonly IGenreService _genreService;
 
-        public HomeController(IBookService bookService)
+        public HomeController(IBookService bookService, IGenreService genreService)
         {
             _bookService = bookService;
+            _genreService = genreService;
         }
 
         public async Task<ActionResult> Index(Guid genreId, string filter = "")
         {
             var books = await _bookService.GetAllByGenreAsync(genreId, filter);
-            return View(books);
+            var genres = await _genreService.GetAllAsync();
+
+            BookDisplayModel model = new()
+            {
+                Books = books,
+                Genres = genres,
+                Filter = filter,
+                GenreId = genreId
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()

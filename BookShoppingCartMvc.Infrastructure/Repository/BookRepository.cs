@@ -32,8 +32,8 @@ namespace BookShoppingCartMvc.Infrastructure.Repository
                             GenreName = genre.Name
                          }).ToListAsync();
 
-            /*if(genreId.Equals(Guid.Empty))
-                books = books.Where(a => a.GenreId.Equals(genreId)).ToList();*/
+            if(!genreId.Equals(Guid.Empty))
+                books = books.Where(a => a.GenreId.Equals(genreId)).ToList();
 
             return books;
         }
