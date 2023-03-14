@@ -1,5 +1,9 @@
-using BookShoppingCartMvc.Extensions;
+using BookShoppingCartMvc.Application.Abstractions;
+using BookShoppingCartMvc.Application.Abstractions.IRepositories;
+using BookShoppingCartMvc.Application.Abstractions.IServices;
+using BookShoppingCartMvc.Application.Services;
 using BookShoppingCartMvc.Infrastructure;
+using BookShoppingCartMvc.Infrastructure.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,12 +20,20 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.SameSite = SameSiteMode.None;
 });
 
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IBookService, BookService>();
+
+builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
 builder.Services.AddHsts(options =>
 {
     options.Preload = true;
     options.IncludeSubDomains = true;
     options.MaxAge = TimeSpan.FromDays(365);
 });
+
+// Enable AutoMapper
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -36,10 +48,10 @@ var app = builder.Build();
 
 // TODO: should be refactured
 // Add Admin role
-using(var scope = app.Services.CreateScope())
+/*using(var scope = app.Services.CreateScope())
 {
     await IdentitySeeder.SeedDefaultData(scope.ServiceProvider);
-}
+}*/
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

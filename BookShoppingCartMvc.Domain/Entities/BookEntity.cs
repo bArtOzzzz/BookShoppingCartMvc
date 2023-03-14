@@ -1,4 +1,6 @@
-﻿namespace BookShoppingCartMvc.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BookShoppingCartMvc.Domain.Entities
 {
     public class BookEntity
     {
@@ -11,5 +13,8 @@
         public GenreEntity? Genre { get; set; }
         public List<OrderDetailEntity>? OrderDetails { get; set; }
         public List<CartDetailEntity>? CartDetails { get; set; }
+
+        [NotMapped]
+        public string? GenreName { get; set; }
     }
 }

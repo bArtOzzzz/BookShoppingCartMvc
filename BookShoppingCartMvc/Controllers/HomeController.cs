@@ -1,4 +1,5 @@
-﻿using BookShoppingCartMvc.Models;
+﻿using BookShoppingCartMvc.Application.Abstractions.IServices;
+using BookShoppingCartMvc.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +7,17 @@ namespace BookShoppingCartMvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IBookService _bookService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IBookService bookService)
         {
-            _logger = logger;
+            _bookService = bookService;
         }
 
-        public IActionResult Index()
+        public async Task<ActionResult> Index(Guid genreId, string filter = "")
         {
-            return View();
+            var books = await _bookService.GetAllByGenreAsync(genreId, filter);
+            return View(books);
         }
 
         public IActionResult Privacy()

@@ -1,10 +1,11 @@
-﻿using BookShoppingCartMvc.Domain.Entities;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using BookShoppingCartMvc.Application.Abstractions;
+using BookShoppingCartMvc.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookShoppingCartMvc.Infrastructure
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext, IApplicationDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
