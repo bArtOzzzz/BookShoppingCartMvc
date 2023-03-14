@@ -135,8 +135,8 @@ namespace BookShoppingCartMvc.Infrastructure.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -180,8 +180,8 @@ namespace BookShoppingCartMvc.Infrastructure.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -297,11 +297,11 @@ namespace BookShoppingCartMvc.Infrastructure.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("11e2af74-de57-41a0-92b8-c39af4de86a2"), "Western" },
-                    { new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Adventure" },
-                    { new Guid("55e9c97b-205b-4c4f-a56e-ff52c552f625"), "Horror" },
-                    { new Guid("cf13ea50-d7d1-46af-ac54-096f8d830d11"), "Roman" },
-                    { new Guid("fb3f8241-4336-49ea-9bd4-aaaaad64b406"), "IT Education" }
+                    { new Guid("4ba4c263-3db7-432d-91c5-d220fc9b60e6"), "IT Education" },
+                    { new Guid("50044499-9794-4c5d-a8b8-f2641072d038"), "Roman" },
+                    { new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Adventure" },
+                    { new Guid("f92bd11c-1579-4094-aa36-5cadee937dc3"), "Horror" },
+                    { new Guid("fbc15a69-c8dd-4ea7-85f4-085ec038df51"), "Western" }
                 });
 
             migrationBuilder.InsertData(
@@ -309,15 +309,15 @@ namespace BookShoppingCartMvc.Infrastructure.Migrations
                 columns: new[] { "Id", "AuthorName", "CoverUrl", "GenreId", "Name", "Price" },
                 values: new object[,]
                 {
-                    { new Guid("117bd63c-cccb-45c1-9e39-9a30c8448eef"), "Ian Flynn", "https://cv9.litres.ru/pub/c/cover_415/66477990.webp", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 5 Кризис в городе", 7.7999999999999998 },
-                    { new Guid("2292a1f7-6ef6-4cd2-9178-0f61a11c6956"), "Ben Watson", "https://cv3.litres.ru/pub/c/cover_415/64086931.webp", new Guid("fb3f8241-4336-49ea-9bd4-aaaaad64b406"), "Высокопроизводительный код на платформе .NET", 7.9000000000000004 },
-                    { new Guid("26a36f81-3eff-45bb-b32e-87daa74ff68a"), "Ian Flynn", "https://cv1.litres.ru/pub/c/cover_415/51657416.webp", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 3 Битва за Остров Ангела", 7.7999999999999998 },
-                    { new Guid("286e9324-8f3f-4e0b-a7c9-c4099956f67d"), "Ian Flynn", "https://cv1.litres.ru/pub/c/cover_415/67066215.webp", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 7 Все или Ничего", 7.7999999999999998 },
-                    { new Guid("4999068c-46c9-405b-b515-aa943120dd60"), "Ian Flynn", "https://cv2.litres.ru/pub/c/cover_415/54096725.webp", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 2. Судьба доктора Эггмана", 7.7999999999999998 },
-                    { new Guid("63b0ddcd-27b6-4778-b9ba-8e4c068674c4"), "Ian Flynn", "https://images.deal.by/172909677_w640_h640_komiks-sonic-sonik.jpg", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 1 Нежелательные последствия", 7.7999999999999998 },
-                    { new Guid("8c5e3e7d-210a-4707-91d1-64d09498b239"), "Ian Flynn", "https://cv9.litres.ru/pub/c/cover_415/65106791.webp", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 6 Последняя минута", 7.7999999999999998 },
-                    { new Guid("ce873c06-d87c-40e7-b880-cd57a4f62188"), "Jeffrey Richter", "https://cv3.litres.ru/pub/c/cover_415/11643433.webp", new Guid("fb3f8241-4336-49ea-9bd4-aaaaad64b406"), "CLR via C#", 9.1999999999999993 },
-                    { new Guid("f572372a-0670-4053-b3db-bd04458a8779"), "Ian Flynn", "https://cv4.litres.ru/pub/c/cover_415/54096646.webp", new Guid("1d9997a6-a281-4614-bc30-520f853d3bad"), "Комикс Sonic. Том 4 Заражение", 7.7999999999999998 }
+                    { new Guid("0177aa66-e53e-48bf-93ae-b9072151fe7c"), "Ian Flynn", "https://cv1.litres.ru/pub/c/cover_415/51657416.webp", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 3 Битва за Остров Ангела", 7.7999999999999998 },
+                    { new Guid("2c428ca8-1f03-414e-8fdf-74e51d66ebf3"), "Ian Flynn", "https://images.deal.by/172909677_w640_h640_komiks-sonic-sonik.jpg", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 1 Нежелательные последствия", 7.7999999999999998 },
+                    { new Guid("4b97dcf4-4568-4415-b90a-25a3deeb914d"), "Ian Flynn", "https://cv2.litres.ru/pub/c/cover_415/54096725.webp", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 2. Судьба доктора Эггмана", 7.7999999999999998 },
+                    { new Guid("4f47aee6-1f90-4d43-8377-e9cad45f96c2"), "Ian Flynn", "https://cv4.litres.ru/pub/c/cover_415/54096646.webp", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 4 Заражение", 7.7999999999999998 },
+                    { new Guid("64a45b35-2e54-480c-91da-f82d8499e57f"), "Jeffrey Richter", "https://cv3.litres.ru/pub/c/cover_415/11643433.webp", new Guid("4ba4c263-3db7-432d-91c5-d220fc9b60e6"), "CLR via C#", 9.1999999999999993 },
+                    { new Guid("6994eded-7c27-4753-aa2b-4accbd5453ee"), "Ben Watson", "https://cv3.litres.ru/pub/c/cover_415/64086931.webp", new Guid("4ba4c263-3db7-432d-91c5-d220fc9b60e6"), "Высокопроизводительный код на платформе .NET", 7.9000000000000004 },
+                    { new Guid("a64a18c7-afb7-4caf-96c4-b6684b39694c"), "Ian Flynn", "https://cv9.litres.ru/pub/c/cover_415/66477990.webp", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 5 Кризис в городе", 7.7999999999999998 },
+                    { new Guid("bc39d520-4369-43a5-a7a8-c7fc78d7b25a"), "Ian Flynn", "https://cv1.litres.ru/pub/c/cover_415/67066215.webp", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 7 Все или Ничего", 7.7999999999999998 },
+                    { new Guid("ed00a047-476a-47e7-8762-705a904883c6"), "Ian Flynn", "https://cv9.litres.ru/pub/c/cover_415/65106791.webp", new Guid("e58df281-8c5a-420a-a322-7935dfebebba"), "Комикс Sonic. Том 6 Последняя минута", 7.7999999999999998 }
                 });
 
             migrationBuilder.CreateIndex(

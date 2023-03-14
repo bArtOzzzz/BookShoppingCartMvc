@@ -5,11 +5,11 @@ VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShoppingCartMvc", "BookShoppingCartMvc\BookShoppingCartMvc.csproj", "{0B35BC9B-F9FB-4841-AB75-2F8594114014}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShoppingCartMvc.Infrastructure", "BookShoppingCartMvc.Infrastructure\BookShoppingCartMvc.Infrastructure.csproj", "{43A94D4C-33BA-4834-8716-BE7FF4AB8218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShoppingCartMvc.Infrastructure", "BookShoppingCartMvc.Infrastructure\BookShoppingCartMvc.Infrastructure.csproj", "{43A94D4C-33BA-4834-8716-BE7FF4AB8218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShoppingCartMvc.Domain", "BookShoppingCartMvc.Domain\BookShoppingCartMvc.Domain.csproj", "{F10D748D-154A-4F0C-990F-74B1E3B130CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShoppingCartMvc.Domain", "BookShoppingCartMvc.Domain\BookShoppingCartMvc.Domain.csproj", "{F10D748D-154A-4F0C-990F-74B1E3B130CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookShoppingCartMvc.Application", "BookShoppingCartMvc.Application\BookShoppingCartMvc.Application.csproj", "{3E64A4CE-8162-43B0-85F4-08445ACE1193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookShoppingCartMvc.Application", "BookShoppingCartMvc.Application\BookShoppingCartMvc.Application.csproj", "{3E64A4CE-8162-43B0-85F4-08445ACE1193}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
