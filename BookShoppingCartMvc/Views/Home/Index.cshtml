@@ -9,7 +9,7 @@
                 <option selected>Genres</option>
                 @foreach (var genre in Model.Genres!)
                 {
-                    <option selected="@(genre.Id == Model.GenreId)" value="@genre.Id">@genre.Name</option>
+                    <option selected="@(genre.Id.Equals(Model.GenreId))" value="@genre.Id">@genre.Name</option>
                 }
             </select>
         </div>

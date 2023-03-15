@@ -1,9 +1,9 @@
-using BookShoppingCartMvc.Application.Abstractions;
 using BookShoppingCartMvc.Application.Abstractions.IRepositories;
 using BookShoppingCartMvc.Application.Abstractions.IServices;
+using BookShoppingCartMvc.Infrastructure.Repository;
+using BookShoppingCartMvc.Application.Abstractions;
 using BookShoppingCartMvc.Application.Services;
 using BookShoppingCartMvc.Infrastructure;
-using BookShoppingCartMvc.Infrastructure.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

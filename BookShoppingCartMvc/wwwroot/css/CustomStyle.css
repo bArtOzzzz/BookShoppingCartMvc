@@ -10,6 +10,11 @@
     width: 250px;
 }
 
+.card-item:hover {
+    outline: 2px solid #0300a8;
+    outline-offset: -2px;
+}
+
 .book-cover {
     height: 320px;
 }
@@ -50,33 +55,31 @@
     -webkit-transition: color 300ms;
     transition: color 300ms;
 }
-    .add-to-cart-button:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        -webkit-transform: scale(0);
-        transform: scale(0);
-        -webkit-transition-property: transform;
-        -webkit-transition-property: -webkit-transform;
-        transition-property: -webkit-transform;
-        transition-property: transform;
-        transition-property: transform, -webkit-transform;
-        -webkit-transition: 300ms ease-out;
-        transition: 300ms ease-out;
-    }
 
-    .add-to-cart-button:hover:before {
-        background: #7f00ff;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
+.add-to-cart-button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition: 300ms ease-out;
+    transition: 300ms ease-out;
+}
 
-
-
+.add-to-cart-button:hover:before {
+    background: #7f00ff;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
 
 .transition-scale {
     position: relative;
@@ -84,7 +87,7 @@
     transition: 0.3s linear;
 }
 
-    .transition-scale:hover {
-        -webkit-transform: scale(1.2);
-        transform: scale(1.2);
-    }
+.transition-scale:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
