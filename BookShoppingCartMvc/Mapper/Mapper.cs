@@ -13,6 +13,9 @@ namespace BookShoppingCartMvc.Mapper
 
             CreateMap<GenreEntity, GenreDto>();
             CreateMap<GenreDto, GenreEntity>();
+
+            CreateMap<ShoppingCartEntity, ShoppingCartDto>();
+            CreateMap<ShoppingCartDto, ShoppingCartEntity>();
         }
     }
 }
