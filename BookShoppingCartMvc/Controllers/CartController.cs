@@ -13,7 +13,7 @@ namespace BookShoppingCartMvc.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> CreateAsync(Guid bookId, int quantity = 1, int redirect = 0)
+        public async Task<IActionResult> CreateAsync(Guid bookId, int quantity = 1, int redirect = 0)
         {
             var cartCount = await _shoppingCartService.CreateAsync(bookId, quantity);
 
@@ -23,21 +23,24 @@ namespace BookShoppingCartMvc.Controllers
             return RedirectToAction("GetByUserIdAsync");
         }
 
-        public async Task<ActionResult> RemoveAsync(Guid bookId)
+        [HttpDelete]
+        public async Task<IActionResult> RemoveAsync(Guid bookId)
         {
             var cartCount = await _shoppingCartService.DeleteAsync(bookId);
 
             return RedirectToAction("GetByUserIdAsync");
         }
 
-        public async Task<ActionResult> GetByUserIdAsync()
+        [HttpGet]
+        public async Task<IActionResult> GetByUserIdAsync()
         {
             var cart = await _shoppingCartService.GetByUserIdAsync();
 
             return View(cart);
         }
 
-        public async Task<ActionResult> GetCartItemCountAsync()
+        [HttpGet]
+        public async Task<IActionResult> GetCartItemCountAsync()
         {
             int cartItem = await _shoppingCartService.GetCartItemCountAsync();
 
